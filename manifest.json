@@ -1,0 +1,35 @@
+{
+    "name" : "Touchstone Extension",
+    "version" : "0.0.1",
+    "description" : "Generate Touchstone testcase script.",
+    "devtools_page": "devtools.html",
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["vendor/jquery/jquery.min.js", "js/content_script.js"]
+        }
+    ],
+    "background": {
+        "scripts": [
+            "js/background.js"
+        ]
+    },
+    "permissions": [
+        "webNavigation",
+        "tabs"
+    ],
+    "browser_action": {
+        "default_icon": {
+            "16": "images/touchstone_16.png",
+            "24": "images/touchstone_16.png",
+            "32": "images/touchstone_32.png"
+        },
+        "default_title": "Touchstone Extension"
+    },
+    "icons": {
+        "16": "images/touchstone_16.png",
+        "48": "images/touchstone_48.png",
+        "128": "images/touchstone_128.png"
+    }
+}
