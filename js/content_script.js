@@ -57,6 +57,7 @@ $(document).on("click", ":button", function(event){
 $(document).on("click", "a", function(event){
     console.log("click a!!!!!!");
     getInfo(this);
+    console.log(Robula(this));
     sendEventMsg(event, {
         action: "click",
         target: "touchstone-start",
@@ -368,20 +369,22 @@ function orderAttribute(attr) {
 	}
 
 	for(var i=order.length-1;i>-1;i--){
-	  	if(order[i]!=null)
-			aux.unshift(order[i]);
+	  	if(order[i]!=null) {
+            aux.unshift(order[i]);
+        }
 	}
 
 	return aux;
 }
 
 function ignoreAttribute(attr) {
-
 	for(var i=0; i<attr.length; i++){
 		if(isIn(attr[i].name, attributiBlackList)){
 			attr.splice(i, 1);
+            i = i-1;
 		}
 	}
+    console.log("ignoreAttribute attr: ", attr);
 	return attr;
 }
 
